@@ -14,3 +14,6 @@ interface ContextProps {
   addMessage: (content: string) => Promise<void>;
   isLoadingAnswer: boolean;
 }
+
+const ChatsContext = createContext<Partial<ContextProps>>({});
+export function MessagesProvider({ children }: { children: ReactNode }) {}
