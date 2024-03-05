@@ -16,4 +16,8 @@ interface ContextProps {
 }
 
 const ChatsContext = createContext<Partial<ContextProps>>({});
-export function MessagesProvider({ children }: { children: ReactNode }) {}
+export function MessagesProvider({ children }: { children: ReactNode }) {
+  const { addToast } = useToast();
+  const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
+  const [isLoadingAnswer, setIsLoadingAnswer] = useState(false);
+}
