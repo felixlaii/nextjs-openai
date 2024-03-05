@@ -12,8 +12,9 @@ export default function Home() {
           type="text"
           placeholder="type your message"
           value={inputValue}
-          onChange={(e) => setInputValue}
+          onChange={(e) => setInputValue(e.target.value)}
         />
+        <button type="submit">send</button>
       </form>
     </>
   );
