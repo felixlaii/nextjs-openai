@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-
+import { ChatProps } from "@/types/chat-types";
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
 
     setChatLog((prevChatLog) => [
