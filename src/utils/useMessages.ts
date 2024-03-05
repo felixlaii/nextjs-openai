@@ -8,3 +8,9 @@ import {
   useState,
 } from "react";
 import { sendMessage } from "./sendMessage";
+
+interface ContextProps {
+  messages: ChatCompletionRequestMessage[];
+  addMessage: (content: string) => Promise<void>;
+  isLoadingAnswer: boolean;
+}
