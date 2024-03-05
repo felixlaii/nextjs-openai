@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apideck/components": "^0.12.21",
     "dotenv": "^16.4.5",
     "next": "14.1.2",
     "openai": "^4.28.4",
