@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import Configuration from "openai";
-import OpenAIApi from "openai";
+import Configuration, { OpenAI } from "openai";
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
