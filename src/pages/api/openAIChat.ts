@@ -1,39 +1,70 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import OpenAI from "openai";
+import { NextApiRequest, NextApiResponse } from "next";
+import Configuration, { OpenAI } from "openai";
 
-// const openai = new OpenAI({
-//   apiKey: process.env.OPENAI_API_KEY,
-// });
+// Create Data Type for res: NextApiResponse<Data> parameter of function generate()
+type Data = {
+  error?: {
+    message: string;
+  };
+  result?: any;
+};
 
-interface RequestBody {
-  messages: any[];
-}
-export default async function createMessage(
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY, // api key will automatically be imported from .env file
+});
+const openai = new OpenAI(configuration as any);
+
+export default async function generate(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<Data>
 ) {
-  const { messages } = req.body;
-  const apiKey = process.env.OPENAI_API_KEY;
-  const url = "https://api.openai.com/v1/chat/completions";
-
-  const body = JSON.stringify({
-    messages,
-    model: "gpt-3.5-turbo",
-    stream: false,
-  });
-
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
+  // handling error in case API Key not configured
+  if (!configuration.apiKey) {
+    res.status(500).json({
+      error: {
+        message:
+          "OpenAI API key not configured, please follow instructions in README.md",
       },
-      body,
     });
-    const data = await response.json();
-    res.status(200).json({ data });
-  } catch (error: any) {
-    res.status(500).json({ error: error.message });
+    return;
   }
+
+  // Get input value from form on Submit event
+  const question = req.body.question || "";
+  if (question.trim().length === 0) {
+    res.status(400).json({
+      error: {
+        message: "Please enter a valid question",
+      },
+    });
+    return;
+  }
+
+  // generate answer from AI Model
+  try {
+    const completion = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo", // Model AI type for generating text
+      messages: [{ role: "system", content: "You are a helpful assistant." }],
+    });
+    res.status(200).json({ result: completion.choices[0].message.content });
+  } catch (error: any) {
+    // Consider adjusting the error handling logic for your use case
+    if (error.response) {
+      console.error(error.response.status, error.response.data);
+      res.status(error.response.status).json(error.response.data);
+    } else {
+      console.error(`Error with OpenAI API request: ${error.message}`);
+      res.status(500).json({
+        error: {
+          message: "An error occurred during your request.",
+        },
+      });
+    }
+  }
+}
+
+function generatePrompt(question: string) {
+  const capitalizedCountry =
+    question[0].toUpperCase() + question.slice(1).toLowerCase(); // in case question text is capitalized
+  return `${capitalizedCountry}`;
 }
