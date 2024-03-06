@@ -14,6 +14,7 @@ export default function Home() {
 
   const handleOnClick = async () => {
     setCompletion("loading");
+    const response = await fetch("/api/hello");
   };
   return (
     <>
