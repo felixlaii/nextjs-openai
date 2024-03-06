@@ -1,10 +1,16 @@
 import Head from "next/head";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Home() {
   const [value, setValue] = useState<string>("");
   const [completion, setCompletion] = useState<string>("");
 
+  const handleInput = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setValue(e.target.value);
+    },
+    []
+  );
   return (
     <>
       <div>
