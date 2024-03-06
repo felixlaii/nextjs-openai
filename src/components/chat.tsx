@@ -7,5 +7,9 @@ export default function Chat() {
 
   const { isLoaded, isSignedIn, user } = useUser();
   const { openSignIn, session } = useClerk();
+
+  const credits = user?.publicMetadata?.credits;
+  const newUser = typeof credits === "undefined";
+  const paidUser = user?.publicMetadata?.stripeCustomerId;
   return <div></div>;
 }
