@@ -11,6 +11,10 @@ export default function Home() {
     },
     []
   );
+
+  const handleOnClick = async () => {
+    setCompletion("loading");
+  };
   return (
     <>
       <div>
