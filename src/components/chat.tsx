@@ -54,5 +54,14 @@ export default function Chat() {
     ref.current.scrollTo(0, ref.current.scrollHeight);
   }, [messages]);
 
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (isSignedIn) {
+      handleSubmit(e);
+    } else {
+      openSignIn();
+    }
+  }
+
   return <div></div>;
 }
