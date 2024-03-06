@@ -13,5 +13,9 @@ export async function POST(req: Request) {
     }
 
     const user = await currentUser()
+
+    if (!user) {
+      return new NextResponse('You need to sign in first.', {status: 401})
+    }
   }
 }
