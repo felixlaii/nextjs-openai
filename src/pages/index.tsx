@@ -18,6 +18,7 @@ export default function Home() {
           <h2>Enter a Prompt</h2>
         </div>
         <input value={value} onChange={handleInput} />
+        <button>Generate</button>
       </div>
       <div>
         <h2>Output:</h2>
