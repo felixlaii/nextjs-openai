@@ -39,8 +39,13 @@ export default function Chat() {
                   onClick: () => setSubscriptionDialogOpen(true),
                 },
               });
+              break;
+            default:
+              toast.error(error?.message || "Something went wrong!");
+              break;
           }
         }
+        session?.reload();
       },
     });
   return <div></div>;
