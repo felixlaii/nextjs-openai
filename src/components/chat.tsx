@@ -48,5 +48,11 @@ export default function Chat() {
         session?.reload();
       },
     });
+
+  useEffect(() => {
+    if (ref.current === null) return;
+    ref.current.scrollTo(0, ref.current.scrollHeight);
+  }, [messages]);
+
   return <div></div>;
 }
