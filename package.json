@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@apideck/components": "^0.12.21",
+    "@clerk/nextjs": "^4.29.9",
+    "ai": "^3.0.7",
     "clsx": "^2.1.0",
     "daisyui": "^4.7.2",
     "dotenv": "^16.4.5",
