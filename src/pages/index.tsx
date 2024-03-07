@@ -14,7 +14,16 @@ export default function Home() {
 
   const handleOnClick = async () => {
     setCompletion("loading");
-    const response = await fetch("/api/hello");
+    const response = await fetch("/api/hello", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text: value }),
+    });
+    const data = await response.json();
+    setValue("");
+    setCompletion(data.result.choices[0].text);
   };
   return (
     <>
