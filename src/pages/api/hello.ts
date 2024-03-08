@@ -5,3 +5,8 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAI(configuration);
+
+const response = await openai.chat.completions.create({
+  model: "gpt-3.5-turbo",
+  stream: true,
+});
