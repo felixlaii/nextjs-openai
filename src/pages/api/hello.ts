@@ -12,7 +12,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const response = await openai.chat.completions.create({
+  const completion = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     stream: true,
     prompt: "req.body.text",
@@ -22,4 +22,5 @@ export default async function handler(
     frequency_penalty: 0,
     presence_penalty: 0,
   });
+  res.status(200).json({ result: completion.data });
 }
