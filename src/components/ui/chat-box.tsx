@@ -19,4 +19,11 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputMessage(e.target.value);
   };
+
+  const handleSendMessage = () => {
+    if (inputMessage.trim() !== "") {
+      onSendMessage(inputMessage);
+      setInputMessage("");
+    }
+  };
 };
