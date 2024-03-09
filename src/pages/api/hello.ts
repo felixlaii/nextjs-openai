@@ -32,6 +32,7 @@ export default async function handler(
       res.status(200).json({ assistantMessage })
     } else {
       console.error("unexpected response format from OpenAI API:", completion);
+      res.status(500).json({ error: "Internal Server Error" })
     }
   }
 }
