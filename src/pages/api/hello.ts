@@ -30,6 +30,8 @@ export default async function handler(
       const assistantMessage = completion.choices[0].message.content || "No content available";
 
       res.status(200).json({ assistantMessage })
+    } else {
+      console.error("unexpected response format from OpenAI API:", completion);
     }
   }
 }
