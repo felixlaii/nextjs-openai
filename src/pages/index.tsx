@@ -10,5 +10,24 @@ export default function Home() {
     },
     []
   );
+
+  const handleOnClick = async () => {
+    const response = await fetch("/api/hello", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text: value }),
+    });
+
+    if (response.ok) {
+      const responseData = await response.json();
+      setAssistantMessage(responseData.assistantMessage);
+      setValue("");
+    } else {
+      console.error("Error calling OpenAI API:", response.statusText);
+    }
+  };
+
   return <div></div>;
 }
