@@ -10,4 +10,11 @@ const openai = new OpenAI({
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
-) {}
+) {
+  try {
+    const userMessage = {
+      role: "assistant",
+      content: req.body.text,
+    };
+  }
+}
