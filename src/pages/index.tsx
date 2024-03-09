@@ -1,52 +1,31 @@
+// pages/index.tsx
+
 import React, { useState } from "react";
+import ChatBox from "../components/ui/chat-box";
+import { Message } from "../components/ui/chat-box";
+const Home: React.FC = () => {
+  const [conversationHistory, setConversationHistory] = useState<Message[]>([]);
 
-export default function Home() {
-  const [value, setValue] = useState<string>("");
-  const [assistantMessage, setAssistantMessage] = useState<string | null>(null);
-  const [conversationHistory, setConversationHistory] = useState<string | null>(
-    null
-  );
-  const handleInput = React.useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-    },
-    []
-  );
+  const handleSendMessage = (message: string) => {
+    const newMessage: Message = {
+      role: "user",
+      content: message,
+    };
+    setConversationHistory([...conversationHistory, newMessage]);
 
-  const handleOnClick = async () => {
-    const response = await fetch("/api/hello", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        text: value,
-        conversationHistory: conversationHistory,
-      }),
-    });
-
-    if (response.ok) {
-      const responseData = await response.json();
-      setAssistantMessage(responseData.assistantReply);
-      setConversationHistory(responseData.conversationHistory);
-      setValue("");
-    } else {
-      console.error("Error calling OpenAI API:", response.statusText);
-    }
+    // Now, you can make an API call to OpenAI with the user's message and update the conversationHistory accordingly.
+    // Remember to handle the OpenAI response and update the conversationHistory with the assistant's reply.
   };
 
   return (
-    <>
-      <div>
-        <div>
-          <h2>Enter a Prompt</h2>
-        </div>
-        <input value={value} onChange={handleInput} />
-        <button onClick={handleOnClick}>Generate</button>
-      </div>
-      <div>
-        <p>Output: {assistantMessage}</p>
-      </div>
-    </>
+    <div>
+      <h1>Chat Application</h1>
+      <ChatBox
+        conversationHistory={conversationHistory}
+        onSendMessage={handleSendMessage}
+      />
+    </div>
   );
-}
+};
+
+export default Home;

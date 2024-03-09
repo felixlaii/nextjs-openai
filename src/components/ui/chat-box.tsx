@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-interface Message {
+export interface Message {
   role: string;
   content: string;
 }
 
-interface ChatBoxProps {
+export interface ChatBoxProps {
   conversationHistory: Message[];
   onSendMessage: (message: string) => void;
 }
@@ -14,40 +14,59 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   conversationHistory,
   onSendMessage,
 }) => {
-  const [inputMessage, setInputMessage] = useState("");
+  const [inputMessage, setInputMessage] = useState<string>("");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputMessage(e.target.value);
-  };
+  const handleSendMessage = async () => {
+    // Assuming your API is at /api/chat
+    const response = await fetch("/api/hello", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        text: inputMessage,
+        conversationHistory,
+      }),
+    });
 
-  const handleSendMessage = () => {
-    if (inputMessage.trim() !== "") {
+    if (response.ok) {
+      const data = await response.json();
+      const { assistantReply, conversationHistory: updatedHistory } = data;
+
+      // Update conversation history with the new message
       onSendMessage(inputMessage);
+
+      // Add assistant's reply to conversation history
+      onSendMessage(assistantReply);
+
+      // No need to update state directly, as it's managed through the prop
+      // Clear the input field
       setInputMessage("");
+    } else {
+      console.error("Error calling OpenAI API:", response.statusText);
     }
   };
   return (
-    <div
-      style={{ border: "1px solid #ccc", padding: "10px", maxWidth: "400px" }}
-    >
-      <div style={{ maxHeight: "300px", overflowY: "auto" }}>
+    <div>
+      {/* Display the conversation history */}
+      <div>
         {conversationHistory.map((message, index) => (
-          <div key={index} style={{ marginBottom: "8px" }}>
-            <strong>{message.role}: </strong>
-            {message.content}
+          <div key={index}>
+            <p>
+              {message.role}: {message.content}
+            </p>
           </div>
         ))}
       </div>
-      <div style={{ marginTop: "10px" }}>
-        <input
-          type="text"
-          value={inputMessage}
-          onChange={handleInputChange}
-          placeholder="Type your message..."
-          style={{ marginRight: "5px" }}
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
+
+      {/* Input field for the user to type a message */}
+      <input
+        value={inputMessage}
+        onChange={(e) => setInputMessage(e.target.value)}
+      />
+
+      {/* Button to send the message */}
+      <button onClick={handleSendMessage}>Send</button>
     </div>
   );
 };
