@@ -4,22 +4,24 @@ import React, { useState } from "react";
 import ChatBox from "../components/ui/chat-box";
 import { Message } from "../components/ui/chat-box";
 const Home: React.FC = () => {
+  // State to manage the conversation history
   const [conversationHistory, setConversationHistory] = useState<Message[]>([]);
 
+  // Function to handle sending messages
   const handleSendMessage = (message: string) => {
-    const newMessage: Message = {
-      role: "user",
-      content: message,
-    };
-    setConversationHistory([...conversationHistory, newMessage]);
-
-    // Now, you can make an API call to OpenAI with the user's message and update the conversationHistory accordingly.
-    // Remember to handle the OpenAI response and update the conversationHistory with the assistant's reply.
+    // Update the conversation history
+    setConversationHistory((prevHistory) => [
+      ...prevHistory,
+      { role: "user", content: message },
+    ]);
+    // Here you might want to make an API call to your OpenAI backend
+    // and update the conversationHistory with the assistant's reply
   };
 
   return (
     <div>
-      <h1>Chat Application</h1>
+      <h1>Your Chat Application</h1>
+      {/* Render the ChatBox component with the current conversation history and the function to update it */}
       <ChatBox
         conversationHistory={conversationHistory}
         onSendMessage={handleSendMessage}
