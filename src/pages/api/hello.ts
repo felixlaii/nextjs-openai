@@ -27,12 +27,16 @@ export default async function handler(
       completion.choices.length > 0 &&
       completion.choices[0].message
     ) {
-      const assistantMessage = completion.choices[0].message.content || "No content available";
+      const assistantMessage =
+        completion.choices[0].message.content || "No content available";
 
-      res.status(200).json({ assistantMessage })
+      res.status(200).json({ assistantMessage });
     } else {
       console.error("unexpected response format from OpenAI API:", completion);
-      res.status(500).json({ error: "Internal Server Error" })
+      res.status(500).json({ error: "Internal Server Error" });
     }
+  } catch (error) {
+    console.error("Error calling OpenAI API:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 }
