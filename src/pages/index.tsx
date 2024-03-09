@@ -29,5 +29,18 @@ export default function Home() {
     }
   };
 
-  return <div></div>;
+  return (
+    <>
+      <div>
+        <div>
+          <h2>Enter a Prompt</h2>
+        </div>
+        <input value={value} onChange={handleInput} />
+        <button onClick={handleOnClick}>Generate</button>
+      </div>
+      <div>
+        <p>Output: {assistantMessage}</p>
+      </div>
+    </>
+  );
 }
