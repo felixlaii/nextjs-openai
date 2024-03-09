@@ -25,7 +25,7 @@ export default async function handler(
       model: "gpt-3.5-turbo",
       messages,
     });
-
+    const assistantReply = completion.data.choices[0].message.content;
     if (
       completion.choices &&
       completion.choices.length > 0 &&
