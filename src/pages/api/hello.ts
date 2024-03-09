@@ -25,18 +25,21 @@ export default async function handler(
       model: "gpt-3.5-turbo",
       messages,
     });
-    const assistantReply = completion.data.choices[0].message.content;
+
+    const assistantReply =
+      completion.choices[0].message.content || "no content available";
+    const assistantMessage =
+      completion.choices[0].message.content || "No content available";
+
     if (
       completion.choices &&
       completion.choices.length > 0 &&
       completion.choices[0].message
     ) {
-      const assistantMessage =
-        completion.choices[0].message.content || "No content available";
-
       res.status(200).json({
         assistantReply,
-        conversationHistory: [...messages, completion.data.choices[0].message],
+        assistantMessage,
+        conversationHistory: [...messages, completion.choices[0].message],
       });
     } else {
       console.error("unexpected response format from OpenAI API:", completion);
