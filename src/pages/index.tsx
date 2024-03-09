@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export default function Home() {
   const [value, setValue] = useState<string>("");
-  const [completion, setCompletion] = useState<string>("");
+  const [assistantMessage, setAssistantMessage] = useState<string | null>(null);
 
   const handleInput = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +13,6 @@ export default function Home() {
   );
 
   const handleOnClick = async () => {
-    setCompletion("loading");
     const response = await fetch("/api/hello", {
       method: "POST",
       headers: {
@@ -21,10 +20,16 @@ export default function Home() {
       },
       body: JSON.stringify({ text: value }),
     });
-    const data = await response.json();
-    setValue("");
-    setCompletion(data.result.choices[0].text);
+
+    if (response.ok) {
+      const responseData = await response.json();
+      setAssistantMessage(responseData.assistantMessage);
+      setValue("");
+    } else {
+      console.error("Error calling OpenAI API:", response.statusText);
+    }
   };
+
   return (
     <>
       <div>
@@ -32,10 +37,10 @@ export default function Home() {
           <h2>Enter a Prompt</h2>
         </div>
         <input value={value} onChange={handleInput} />
-        <button>Generate</button>
+        <button onClick={handleOnClick}>Generate</button>
       </div>
       <div>
-        <h2>Output:</h2>
+        <p>Output: {assistantMessage}</p>
       </div>
     </>
   );
