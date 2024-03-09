@@ -9,3 +9,10 @@ interface ChatBoxProps {
   conversationHistory: Message[];
   onSendMessage: (message: string) => void;
 }
+
+const ChatBox: React.FC<ChatBoxProps> = ({
+  conversationHistory,
+  onSendMessage,
+}) => {
+  const [inputMessage, setInputMessage] = useState("");
+};
