@@ -16,6 +16,8 @@ const ScrollArea = React.forwardRef<
     >
       {children}
     </ScrollAreaPrimitive.Viewport>
+    <ScrollBar />
+    <ScrollAreaPrimitive.Corner />
   </ScrollAreaPrimitive.Root>
 ));
 export { ScrollArea, ScrollBar };
