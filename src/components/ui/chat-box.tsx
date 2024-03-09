@@ -49,9 +49,9 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   return (
     <div>
       {/* Display the conversation history */}
-      <div>
+      <div className="mx-auto mt-3 w-full max-w-lg">
         {conversationHistory.map((message, index) => (
-          <div key={index}>
+          <div key={index} className="mr-6 whitespace-pre-wrap md:mr-12">
             <p>
               {message.role}: {message.content}
             </p>
