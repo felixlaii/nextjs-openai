@@ -34,7 +34,10 @@ export default async function handler(
       const assistantMessage =
         completion.choices[0].message.content || "No content available";
 
-      res.status(200).json({ assistantMessage });
+      res.status(200).json({
+        assistantReply,
+        conversationHistory: [...messages, completion.data.choices[0].message],
+      });
     } else {
       console.error("unexpected response format from OpenAI API:", completion);
       res.status(500).json({ error: "Internal Server Error" });
