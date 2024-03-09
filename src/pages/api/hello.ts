@@ -17,6 +17,8 @@ export default async function handler(
       content: req.body.text,
     };
 
+    const conversationHistory = req.body.conversationHistory || [];
+
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [userMessage],
