@@ -3,7 +3,9 @@ import React, { useState } from "react";
 export default function Home() {
   const [value, setValue] = useState<string>("");
   const [assistantMessage, setAssistantMessage] = useState<string | null>(null);
-
+  const [conversationHistory, setConversationHistory] = useState<string | null>(
+    null
+  );
   const handleInput = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
@@ -17,12 +19,16 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ text: value }),
+      body: JSON.stringify({
+        text: value,
+        conversationHistory: conversationHistory,
+      }),
     });
 
     if (response.ok) {
       const responseData = await response.json();
-      setAssistantMessage(responseData.assistantMessage);
+      setAssistantMessage(responseData.assistantReply);
+      setConversationHistory(responseData.conversationHistory);
       setValue("");
     } else {
       console.error("Error calling OpenAI API:", response.statusText);
