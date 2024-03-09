@@ -1,72 +1,99 @@
 import React, { useState } from "react";
 
-export interface Message {
+interface AvatarProps {
+  children?: React.ReactNode;
+}
+const Avatar: React.FC<AvatarProps> = ({ children }) => {
+  return <div className="avatar">{children}</div>;
+};
+
+export interface MessageProps {
   role: string;
   content: string;
 }
-
-export interface ChatBoxProps {
-  conversationHistory: Message[];
-  onSendMessage: (message: string) => void;
+interface ChatBoxProps {
+  conversationHistory: MessageProps[];
+  onSendMessage: (message: string) => Promise<void>;
 }
+
+export const Message: React.FC<MessageProps> = ({ role, content }) => {
+  return (
+    <div className={`message ${role === "user" ? "user" : "assistant"}`}>
+      {role === "user" ? "You" : "Bot"}: {content}
+    </div>
+  );
+};
 
 const ChatBox: React.FC<ChatBoxProps> = ({
   conversationHistory,
   onSendMessage,
 }) => {
-  const [inputMessage, setInputMessage] = useState<string>("");
+  const [messages, setMessages] = useState<any[]>([]);
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSendMessage = async () => {
-    // Assuming your API is at /api/chat
-    const response = await fetch("/api/hello", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        text: inputMessage,
-        conversationHistory,
-      }),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      const { assistantReply, conversationHistory: updatedHistory } = data;
-
-      // Update conversation history with the new message
-      onSendMessage(inputMessage);
-
-      // Add assistant's reply to conversation history
-      onSendMessage(assistantReply);
-
-      // No need to update state directly, as it's managed through the prop
-      // Clear the input field
-      setInputMessage("");
-    } else {
-      console.error("Error calling OpenAI API:", response.statusText);
-    }
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
   };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setMessages([...messages, { role: "user", content: input }]);
+    setInput("");
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/hello", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: input }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { role: "assistant", content: data.assistantReply },
+        ]);
+      } else {
+        console.error("Error calling API:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error calling API:", error);
+    }
+
+    setIsLoading(false);
+  };
+
   return (
-    <div>
-      {/* Display the conversation history */}
-      <div className="mx-auto mt-3 w-full max-w-lg">
-        {conversationHistory.map((message, index) => (
-          <div key={index} className="mr-6 whitespace-pre-wrap md:mr-12">
-            <p>
-              {message.role}: {message.content}
-            </p>
-          </div>
+    <div className="mx-auto mt-3 w-full max-w-lg">
+      <div className="mb-2 h-[400px] rounded-md border p-4 overflow-y-auto">
+        {messages.map((m, index) => (
+          <Message key={index} role={m.role} content={m.content} />
         ))}
       </div>
 
-      {/* Input field for the user to type a message */}
-      <input
-        value={inputMessage}
-        onChange={(e) => setInputMessage(e.target.value)}
-      />
-
-      {/* Button to send the message */}
-      <button onClick={handleSendMessage}>Send</button>
+      <form onSubmit={onSubmit} className="relative">
+        <input
+          type="text"
+          name="message"
+          value={input}
+          onChange={handleInputChange}
+          placeholder="Type your message..."
+          className="pr-12 placeholder:italic placeholder:text-zinc-600/75 focus-visible:ring-zinc-500 border p-2 rounded-md"
+        />
+        <button
+          type="submit"
+          className={`absolute right-1 top-1 h-8 w-10 ${
+            isLoading ? "bg-gray-400" : "bg-blue-500"
+          } text-white rounded-md`}
+          disabled={isLoading}
+        >
+          {isLoading ? "Sending..." : "Send"}
+        </button>
+      </form>
     </div>
   );
 };
