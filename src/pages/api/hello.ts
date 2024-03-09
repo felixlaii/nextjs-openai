@@ -1,4 +1,5 @@
 const { OpenAI } = require("openai");
+import type { NextApiRequest, NextApiResponse } from "next";
 
 require("dotenv").config();
 
