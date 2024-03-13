@@ -3,6 +3,7 @@ import { SendHorizontalIcon } from "lucide-react";
 
 import { Button } from "./button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Copy from "./copy";
 
 export interface MessageProps {
   role: string;
