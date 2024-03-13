@@ -68,7 +68,39 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     <div className="mx-auto mt-3 w-full max-w-lg">
       <div className="mb-2 h-[400px] rounded-md border p-4 overflow-y-auto">
         {messages.map((m, index) => (
-          <Message key={index} role={m.role} content={m.content} />
+          <div key={index} className="mr-6 whitespace-pre-wrap md:mr-12">
+            {m.role === "user" && (
+              <div className="mb-6 flex gap-3">
+                <Avatar>
+                  <AvatarImage src="" />
+                  <AvatarFallback className="text-sm">U</AvatarFallback>
+                </Avatar>
+                <div className="mt-1.5">
+                  <p className="font-semibold">You</p>
+                  <div className="mt-1.5 text-sm text-zinc-500">
+                    {m.content}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {m.role === "assistant" && (
+              <div className="mb-6 flex gap-3">
+                <Avatar>
+                  <AvatarImage src="" />
+                  <AvatarFallback className="bg-emerald-500 text-white">
+                    AI
+                  </AvatarFallback>
+                </Avatar>
+                <div className="mt-1.5 w-full">
+                  <div className="flex justify-between">
+                    <p className="font-semibold">Bot</p>
+                  </div>
+                  <div className="mt-2 text-sm text-zinc-500">{m.content}</div>
+                </div>
+              </div>
+            )}
+          </div>
         ))}
       </div>
 
