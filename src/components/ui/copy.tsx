@@ -16,4 +16,13 @@ export default function Copy({
   const { copyToClipboard, pasteFromClipboard, state } = useClipboard();
   const [textToCopy, setTextToCopy] = useState("");
   const [pastedText, setPastedText] = useState("");
+
+  const handleCopy = async () => {
+    await copyToClipboard(textToCopy);
+  };
+
+  const handlePaste = async () => {
+    const text = await pasteFromClipboard();
+    setPastedText("");
+  };
 }
