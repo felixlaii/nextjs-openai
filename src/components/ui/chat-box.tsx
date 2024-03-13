@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Button } from "./button";
 interface AvatarProps {
   children?: React.ReactNode;
 }
@@ -84,7 +84,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           placeholder="Type your message..."
           className="w-full pr-12 placeholder:italic placeholder:text-zinc-600/75 focus-visible:ring-zinc-500 border p-2 rounded-md"
         />
-        <button
+        {/* <button
           type="submit"
           className={`absolute right-1 top-1 h-8 w-20 ${
             isLoading ? "bg-gray-400" : "bg-blue-500"
@@ -92,7 +92,18 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           disabled={isLoading}
         >
           {isLoading ? "Sending..." : "Send"}
-        </button>
+        </button> */}
+
+        <Button
+          size="sm"
+          variant="outline"
+          className={`absolute right-1 top-1 h-8 w-20 ${
+            isLoading ? "bg-gray-400" : "bg-blue-500"
+          } text-white rounded-md`}
+          disabled={isLoading}
+        >
+          {isLoading ? "Sending..." : "Send"}
+        </Button>
       </form>
     </div>
   );
