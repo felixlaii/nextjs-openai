@@ -14,8 +14,8 @@ export default function Copy({
   ...props
 }: ChatMessageActionsProps) {
   const { copyToClipboard, pasteFromClipboard, state } = useClipboard();
-  const [textToCopy, setTextToCopy] = useState("");
-  const [pastedText, setPastedText] = useState("");
+  const [textToCopy, setTextToCopy] = useState<any>();
+  const [pastedText, setPastedText] = useState<any>();
 
   const handleCopy = async () => {
     await copyToClipboard(textToCopy);
@@ -23,6 +23,6 @@ export default function Copy({
 
   const handlePaste = async () => {
     const text = await pasteFromClipboard();
-    setPastedText("");
+    setPastedText(text);
   };
 }
