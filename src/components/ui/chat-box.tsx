@@ -22,10 +22,7 @@ export const Message: React.FC<MessageProps> = ({ role, content }) => {
   );
 };
 
-const ChatBox: React.FC<ChatBoxProps> = ({
-  conversationHistory,
-  onSendMessage,
-}) => {
+const ChatBox: React.FC<ChatBoxProps> = () => {
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
