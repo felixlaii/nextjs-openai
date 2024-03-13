@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-
+import { cn } from "@/lib/utils";
 import { type Message } from "ai";
-
+import { Button } from "@/components/ui/button";
+import { CheckIcon, CopyIcon } from "lucide-react";
 import { useClipboard } from "@custom-react-hooks/all";
 
 interface ChatMessageActionsProps extends React.ComponentProps<"div"> {
