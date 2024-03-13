@@ -44,13 +44,17 @@ const Home: React.FC = () => {
     }
   };
   return (
-    <div>
-      <h1>Your Chat Application</h1>
-      {/* Render the ChatBox component with the current conversation history and the function to update it */}
-      <ChatBox
-        conversationHistory={conversationHistory}
-        onSendMessage={handleSendMessage}
-      />
+    <div className="flex flex-column">
+      <div className="w-full justify-center">
+        <div>
+          <h1 className="text-center">ChatGPT Clone</h1>
+        </div>
+        {/* Render the ChatBox component with the current conversation history and the function to update it */}
+        <ChatBox
+          conversationHistory={conversationHistory}
+          onSendMessage={handleSendMessage}
+        />
+      </div>
     </div>
   );
 };
