@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { SendHorizontalIcon } from "lucide-react";
 
 import { Button } from "./button";
-interface AvatarProps {
-  children?: React.ReactNode;
-}
-export const Avatar: React.FC<AvatarProps> = ({ children }) => {
-  return <div className="avatar">{children}</div>;
-};
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export interface MessageProps {
   role: string;
