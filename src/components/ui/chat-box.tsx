@@ -82,11 +82,11 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           value={input}
           onChange={handleInputChange}
           placeholder="Type your message..."
-          className="pr-12 placeholder:italic placeholder:text-zinc-600/75 focus-visible:ring-zinc-500 border p-2 rounded-md"
+          className="w-full pr-12 placeholder:italic placeholder:text-zinc-600/75 focus-visible:ring-zinc-500 border p-2 rounded-md"
         />
         <button
           type="submit"
-          className={`absolute right-1 top-1 h-8 w-10 ${
+          className={`absolute right-1 top-1 h-8 w-20 ${
             isLoading ? "bg-gray-400" : "bg-blue-500"
           } text-white rounded-md`}
           disabled={isLoading}
