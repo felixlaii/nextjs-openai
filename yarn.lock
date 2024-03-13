@@ -19,6 +19,216 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@custom-react-hooks/all@^1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/all/-/all-1.4.19.tgz#c2ca9e7f2339ccb7db47a1ffbf5913a9b273513e"
+  integrity sha512-NR07wemLq8d+rGW5VGnZO/QmcvCnDoBGdXwZZyKZngENPFuvhrE8aeITrXiE2VOu4jZoop2+yy2kb42Oepldpg==
+  dependencies:
+    "@custom-react-hooks/use-async" "1.4.19"
+    "@custom-react-hooks/use-click-outside" "1.4.19"
+    "@custom-react-hooks/use-clipboard" "1.4.19"
+    "@custom-react-hooks/use-debounce" "1.4.19"
+    "@custom-react-hooks/use-document-title" "1.4.19"
+    "@custom-react-hooks/use-drag-drop" "1.4.19"
+    "@custom-react-hooks/use-effect-once" "1.4.19"
+    "@custom-react-hooks/use-element-size" "1.4.19"
+    "@custom-react-hooks/use-event-listener" "1.4.19"
+    "@custom-react-hooks/use-fetch" "1.4.19"
+    "@custom-react-hooks/use-form" "1.4.19"
+    "@custom-react-hooks/use-geo-location" "1.4.19"
+    "@custom-react-hooks/use-hover" "1.4.19"
+    "@custom-react-hooks/use-idle" "1.4.19"
+    "@custom-react-hooks/use-image-load" "1.4.19"
+    "@custom-react-hooks/use-key-press" "1.4.19"
+    "@custom-react-hooks/use-lock-body-scroll" "1.4.19"
+    "@custom-react-hooks/use-long-press" "1.4.19"
+    "@custom-react-hooks/use-media-devices" "1.4.19"
+    "@custom-react-hooks/use-media-query" "1.4.19"
+    "@custom-react-hooks/use-mouse" "1.4.19"
+    "@custom-react-hooks/use-on-screen" "1.4.19"
+    "@custom-react-hooks/use-orientation" "1.4.19"
+    "@custom-react-hooks/use-permission" "1.4.19"
+    "@custom-react-hooks/use-portal" "1.4.19"
+    "@custom-react-hooks/use-script" "1.4.19"
+    "@custom-react-hooks/use-status" "1.4.19"
+    "@custom-react-hooks/use-step" "1.4.19"
+    "@custom-react-hooks/use-storage" "1.4.19"
+    "@custom-react-hooks/use-throttle" "1.4.19"
+    "@custom-react-hooks/use-timeout" "1.4.19"
+    "@custom-react-hooks/use-toggle" "1.4.19"
+    "@custom-react-hooks/use-update-effect" "1.4.19"
+    "@custom-react-hooks/use-window-size" "1.4.19"
+
+"@custom-react-hooks/use-async@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-async/-/use-async-1.4.19.tgz#3d4267222e91ab82a0cea33b0eeb18739d400f8f"
+  integrity sha512-DYOBimkU9FPJ4pEM5rd4/x829NW7B2Uu0XvjPX754AF6D6TTY0xxrQ18KOVAHByyzojfDX0NtF5PaOy07hFwdw==
+
+"@custom-react-hooks/use-click-outside@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-click-outside/-/use-click-outside-1.4.19.tgz#6036d08e0fe5600cd7bee109bb913feed1fc547e"
+  integrity sha512-M/y3czr5dfQBl21y0NBJ/tANgSjshCKiz7uM0UajlaLhJsBnvrE2MTq6p3EZeqNRcCBNj4UFirTz/m0ElVzGyw==
+
+"@custom-react-hooks/use-clipboard@1.4.19", "@custom-react-hooks/use-clipboard@^1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-clipboard/-/use-clipboard-1.4.19.tgz#18dd5d74aac6302dc51efe8eeca1d98eddba1912"
+  integrity sha512-VP43xLhtUUUo13fMRTY/vHRR9ZX5s8R1pbtwxXB8LBU2BP+fkdWRk8inRvBm783BJyDd2BKrpeKgC7b2qz22Yw==
+
+"@custom-react-hooks/use-debounce@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-debounce/-/use-debounce-1.4.19.tgz#878bc5b651ea2588dbaf83fb32650748ef1335b3"
+  integrity sha512-GhWeYQjyHxy+7LS4v8oYU1+DJ2ChSMFmZMz+pZqJRMj6OEbqngyDBBPENcw4dgOLCUaYoETxUh9FRqPm3Fwcgw==
+
+"@custom-react-hooks/use-document-title@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-document-title/-/use-document-title-1.4.19.tgz#f0e5b2e39b97d7889ad87f8922ae5b5cfef00fe9"
+  integrity sha512-o6yx6cjIxmlUJLHOvNv6LAUFwj80WoUyy9zFm9eF7I090oQ10YlAZ5T+Me7bDCoNlVYCtt5KnUbiiO9JYkoXFQ==
+
+"@custom-react-hooks/use-drag-drop@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-drag-drop/-/use-drag-drop-1.4.19.tgz#b1fe2f0bb36f532cc9e524868682a2f36f6f0443"
+  integrity sha512-HNhhd1l1oNpA9090DQqgNV19MTlao/46WpPRciJkIlxMhFMdnHxjqvCmqhvVri0BaxtmBys5xFxL76r1IcSZdg==
+
+"@custom-react-hooks/use-effect-once@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-effect-once/-/use-effect-once-1.4.19.tgz#c7c649846580cbe8f8832733c534414136a63810"
+  integrity sha512-7Ou+9mekLOxYD4fKHwlYQjvgAIA16UNxiIr7yupBbl1Qzopm7Gd2hLkhJTT+iE/0b/CgO7HtwVtAwRF2QAvKaQ==
+
+"@custom-react-hooks/use-element-size@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-element-size/-/use-element-size-1.4.19.tgz#4c0810322e75a8c550689c60dd25613e70106467"
+  integrity sha512-J+qqDDWW9iDm8djvKOJqROxrort4OFkyJYgVI0qNGFIznX/gRqpE1wnurDZI/Qkl+4OCi3CSiOh+rWDcm2wRrA==
+
+"@custom-react-hooks/use-event-listener@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-event-listener/-/use-event-listener-1.4.19.tgz#7e465293378c2e93a4377a2b2a5a65e7c02d5ed9"
+  integrity sha512-gbpU/1NQOo5f3oOn/zBss7Yfd74t7r40QuEcBpTHHVIwxpPKCNWi17iqpt2V4PzS6iYEQ4pXTmWS3eEJfoDqsg==
+
+"@custom-react-hooks/use-fetch@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-fetch/-/use-fetch-1.4.19.tgz#2dcef8632d8c1a27414aa2832cfde4bccdd7c949"
+  integrity sha512-r1nW6ZtvWjIHKmzR/aE706oltTM1C5FTHMLhEBOyMtmCmPIPi5+hCmXmn7AS+YENSt48IUlUYKl9zocT++sYzg==
+
+"@custom-react-hooks/use-form@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-form/-/use-form-1.4.19.tgz#6caa660870393044cf608f1fa209d133dbc47144"
+  integrity sha512-JeC4Pzla8uVWC22nKXeNxzpxa2J0F9Mhc4xftZv0pxVuFHavK9KPvjzolpzu/eXSk5YZy57A18yAdw4OKdJ5uQ==
+
+"@custom-react-hooks/use-geo-location@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-geo-location/-/use-geo-location-1.4.19.tgz#77683bdf0b01e9139cf4fa97bd6ddf1a2ee1850f"
+  integrity sha512-Rw70YACVcVg3Lv1fBgUkTFkW93KgqlKxIGbz9gsAY+V/EcEGVnC+eEGdZ6sffkohbiB4m59NcoNqpCw87isLsQ==
+
+"@custom-react-hooks/use-hover@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-hover/-/use-hover-1.4.19.tgz#42035ba84aa56579a5da366b39e1118cbdfe9a72"
+  integrity sha512-KbNR01WlFmTOJ5VP1f1/qhoA//1YTJZIyZfReamvHNiO0hcerH/Sca69Gq62IzLADqUKE9sjqSiKqu3BkuaCUA==
+
+"@custom-react-hooks/use-idle@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-idle/-/use-idle-1.4.19.tgz#4c7f3f07f44f21723643e0b347f30135e21ba10c"
+  integrity sha512-jZY8nCJ9yZARrZ7BCZz+f5b2DQ3rodPKwXEQJUdmH2/Sp4XnPHg1UBzeC/pT0RTDJN81bzryUsL7ttew0+QuTg==
+
+"@custom-react-hooks/use-image-load@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-image-load/-/use-image-load-1.4.19.tgz#e52e9783dbad8c2de6505da44d400bc1abb5a7c9"
+  integrity sha512-8r+naU3G+TPogF83fTAnpBHq/l89Oc9F2eX8YW7Fbg8yZRhe6rwUz5UfY1BrMe8O4Wvfhd6nTIxAsN9/p06KVA==
+
+"@custom-react-hooks/use-key-press@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-key-press/-/use-key-press-1.4.19.tgz#f7dc115a9efd8c942243f04de4005c23edcc19b2"
+  integrity sha512-hDqC0t52N4NlxujRmZ1F7X/4lYtrEJeOUkD49S6F0+FSjZ6kZhloJIQKoSzU0/WlRArHPT1TjIe5oGf9rGwxRg==
+
+"@custom-react-hooks/use-lock-body-scroll@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-lock-body-scroll/-/use-lock-body-scroll-1.4.19.tgz#7b0fa915b9cf0db6be8a6787abcb69c6e24f96f4"
+  integrity sha512-IGPnlnPv5yWg2hDbQEK1M3nR7lzrzy1wLPyzUZzVRPsQ/kGFem+eYAv6/UYrT1JczTrI5l/x39d7oT0uAN0nFg==
+
+"@custom-react-hooks/use-long-press@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-long-press/-/use-long-press-1.4.19.tgz#8b37e2353ad44e0d71d59bcfd2db1474244c04dd"
+  integrity sha512-+H5bM486XMHUSF8fH8Mo26Q/2BblqTP11Ynjp3UfIAmkWpXvj0AAs6TXvXfknT1NZ+89dwfRYgx14n9MsHse7w==
+
+"@custom-react-hooks/use-media-devices@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-media-devices/-/use-media-devices-1.4.19.tgz#8797c3187af4617a2c5ecb0e680d668624717387"
+  integrity sha512-JhDowSUvcZQO8qt8hYtSZV8PevI/P+9ZoADjgdNcJf8/Y0gza/oFrMN+HUr+0sEYrCZuXlKhi6khSX49+NipbA==
+
+"@custom-react-hooks/use-media-query@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-media-query/-/use-media-query-1.4.19.tgz#27378bb01ab3cfc94b843586a60c444230926081"
+  integrity sha512-jCyb7BqBjZA10Ht5y5goXNfUfl2/p4cvsrXXWCY2ReDTKyig79HPG7g4kxABRJurgAr/D/OD1lIe7AYt5CKHkg==
+
+"@custom-react-hooks/use-mouse@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-mouse/-/use-mouse-1.4.19.tgz#2514596b040a1a5b79dc28885f1875efb66fdab5"
+  integrity sha512-P1i82gOSKTCPUaZPECjzTJHY7R3gU5M1IzkyA150W7qy2/MOwYFWt6gavkI9KAjhaTWamHNtJwZkxBJam4vdOw==
+
+"@custom-react-hooks/use-on-screen@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-on-screen/-/use-on-screen-1.4.19.tgz#22bde83e621cac8da39f5b1da08714e77782f2a8"
+  integrity sha512-MJhvRz7m05TYH5KbLA3F0MU5banSAa+mLl3CBz4gTiaLtSPtUYYoEL2dgeISBr1MbdccDQZ4hzjevoaEeuyIxQ==
+
+"@custom-react-hooks/use-orientation@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-orientation/-/use-orientation-1.4.19.tgz#56d0fddbfd21b11cbaaec7357b3d66d48a14112c"
+  integrity sha512-KKk9Y9SyiQlpDExINpE5sKFLWequsWR6YRio/KD1oiG9brI12nwpN7ZRd7gmwEtpcGs+ITrziU4/osCic5Fwwg==
+
+"@custom-react-hooks/use-permission@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-permission/-/use-permission-1.4.19.tgz#06c151030c3d0248b205cf28e0aabbd28df7415d"
+  integrity sha512-2ibY7qUudW3f/fKksxuEi2o5dfSGmdGJVhQK8HTV+pich6FeFVl0a6h7C6NWHA202VszcGzUSjhRsz9TopVaBg==
+
+"@custom-react-hooks/use-portal@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-portal/-/use-portal-1.4.19.tgz#be4f1052561e0d0a2c8bb72d924df0ae0e339b8e"
+  integrity sha512-5EZE8Zmf6p465QybuJ7zqDmYVXs1EU3YwpCShAtJhrUVqA+oqLlN8PwGAZQ+XndL7FYp5bhWixdgSSlj0AMM0Q==
+
+"@custom-react-hooks/use-script@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-script/-/use-script-1.4.19.tgz#d8a5a0291dcdeb8f1396b074ed88845d75ecbd2e"
+  integrity sha512-KRkBRPwfVOnT1nw2NUU4FdIsuEwOTufyBKqw03lJkhJmf62O3VZKofec4IoEThvjbVClWSsYQ/ZHRnQf+bxVVA==
+
+"@custom-react-hooks/use-status@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-status/-/use-status-1.4.19.tgz#402445ad98c4a47fb4c5facfbead54d08d7fad6d"
+  integrity sha512-1/pCPPzy7Q+KNFkWk2T4HGwKOvj9y7RA0UemQXrQrlVeyAuvLP3vw+bBx5ZL9+YU/B1yIroGEjVeYGrBtnSDcQ==
+
+"@custom-react-hooks/use-step@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-step/-/use-step-1.4.19.tgz#1d1cd645f42aac13abb7e2de4607276372aa2a54"
+  integrity sha512-gX+nHEUOPpPMZcF7CLNwtiz2p60y1nTsIlrBw1JnV0g7hduaNFyaAJxDXPbusCviWpWQYkMAe5VRZAxliGi0JQ==
+
+"@custom-react-hooks/use-storage@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-storage/-/use-storage-1.4.19.tgz#ce4e24c63856081b43a06618a017c42770e6f20b"
+  integrity sha512-jzDrGQ6UNRm2mw5aXSZOKWAvRl6baAVkCvNFE/8eJH6weDE32Qwa1P55CmA2UGtbCrohHddAdbwjXKwXi0+VZw==
+
+"@custom-react-hooks/use-throttle@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-throttle/-/use-throttle-1.4.19.tgz#66305dd2bd6042cd73ee635775bf08b41ff8c311"
+  integrity sha512-or6moppLHlbNnr3xV7L1rO/7RI5mDnJCvL89okdIKYVGuB1Z5Fpd8qLukjrfVDbJqtM2c2+Mk8cWVDTAuZ5tCw==
+
+"@custom-react-hooks/use-timeout@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-timeout/-/use-timeout-1.4.19.tgz#f6cb91cba52b8daf69ea2f3af0f49271a568dcb6"
+  integrity sha512-DypQSne50VK9N+0i68tE+Fss+RcJk1xiR6+/dxKKdVsjEeKAT+zgsBWDm+u+Edem5zdB18FJDq+s/cvkr8eD/Q==
+
+"@custom-react-hooks/use-toggle@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-toggle/-/use-toggle-1.4.19.tgz#298a0b4b6f7d14e0cbba656bbb0a6032774f7217"
+  integrity sha512-smYjmjyWH0jHPJ9XRZ/OXuDnCCzK3rTiHS88YhSi/rFMCFgZj911O8Vau9WiKdFVIbmC2Aj+MahEN5lepfjjOw==
+
+"@custom-react-hooks/use-update-effect@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-update-effect/-/use-update-effect-1.4.19.tgz#2748eaeaa894b25dd02387cfebdb2df489c323fe"
+  integrity sha512-N1I/0FvcGD0VxRgVhFYQrT70f+ZXy8fVriT2vaxx94r9jp+anElX/GFpBS05oqmXLn0f2w3vnLr7+JLp3b9rBA==
+
+"@custom-react-hooks/use-window-size@1.4.19":
+  version "1.4.19"
+  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-window-size/-/use-window-size-1.4.19.tgz#b1cb4da11f16ee1e32e637be4e574e66f81bc3f5"
+  integrity sha512-xO2YLc22Xt+0kubQbtKm7tk5m82pFreQIY3Wg6Km3Jp/h8wqL3cMzxqxPRII9JRtJF4Wp4hSm9yMFfnohXQcGw==
+
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
@@ -310,6 +520,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@types/diff-match-patch@^1.0.36":
+  version "1.0.36"
+  resolved "https://registry.yarnpkg.com/@types/diff-match-patch/-/diff-match-patch-1.0.36.tgz#dcef10a69d357fe9d43ac4ff2eca6b85dbf466af"
+  integrity sha512-xFdR6tkm0MWvBfO8xXCSsinYxHcqkQUlcHeSpMC2ukzOb6lwQAfDmW+Qt0AvlGd8HpsS28qKsB+oPeJn9I39jg==
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
@@ -437,6 +652,21 @@ agentkeepalive@^4.2.1:
   integrity sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==
   dependencies:
     humanize-ms "^1.2.1"
+
+ai@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/ai/-/ai-3.0.9.tgz#a103d024c3181eba1854466d923ae8309333af63"
+  integrity sha512-v7y3+bSgGgiA1HkijvXcuHVSqZGljWRnBk/CFp5eJo+rSNFFSt/0s1IoAPZuE8hiWuqPrN9Pz9/cFKB1duh17g==
+  dependencies:
+    eventsource-parser "1.0.0"
+    jsondiffpatch "^0.6.0"
+    nanoid "3.3.6"
+    solid-swr-store "0.10.7"
+    sswr "2.0.0"
+    swr "2.2.0"
+    swr-store "0.10.6"
+    swrv "1.0.4"
+    zod-to-json-schema "^3.22.4"
 
 ajv@^6.12.4:
   version "6.12.6"
@@ -748,6 +978,11 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+chalk@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.3.0.tgz#67c20a7ebef70e7f3970a01f90fa210cb6860385"
+  integrity sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==
+
 charenc@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
@@ -899,6 +1134,11 @@ didyoumean@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/didyoumean/-/didyoumean-1.2.2.tgz#989346ffe9e839b4555ecf5666edea0d3e8ad037"
   integrity sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==
+
+diff-match-patch@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/diff-match-patch/-/diff-match-patch-1.0.5.tgz#abb584d5f10cd1196dfc55aa03701592ae3f7b37"
+  integrity sha512-IayShXAgj/QMXgB0IWmKx+rOPuGMhqm5w6jvFxmVenXKIzRqTAAsbBPT3kWQeGANj3jGgvcvv4yK6SxqYmikgw==
 
 digest-fetch@^1.3.0:
   version "1.3.0"
@@ -1299,6 +1539,11 @@ event-target-shim@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
+
+eventsource-parser@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eventsource-parser/-/eventsource-parser-1.0.0.tgz#6332e37fd5512e3c8d9df05773b2bf9e152ccc04"
+  integrity sha512-9jgfSCa3dmEme2ES3mPByGXfgZ87VbP97tng1G2nWwWx6bV2nYxm2AWCrbQjXToSe+yYlqaZNtxffR9IeQr95g==
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
@@ -1885,6 +2130,15 @@ json5@^1.0.2:
   dependencies:
     minimist "^1.2.0"
 
+jsondiffpatch@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/jsondiffpatch/-/jsondiffpatch-0.6.0.tgz#daa6a25bedf0830974c81545568d5f671c82551f"
+  integrity sha512-3QItJOXp2AP1uv7waBkao5nCvhEv+QmJAd38Ybq7wNI74Q+BBmnLn4EDKz6yI9xGAIQoUF87qHt+kc1IVxB4zQ==
+  dependencies:
+    "@types/diff-match-patch" "^1.0.36"
+    chalk "^5.3.0"
+    diff-match-patch "^1.0.5"
+
 "jsx-ast-utils@^2.4.1 || ^3.0.0", jsx-ast-utils@^3.3.5:
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-3.3.5.tgz#4766bd05a8e2a11af222becd19e15575e52a853a"
@@ -2049,6 +2303,11 @@ mz@^2.7.0:
     any-promise "^1.0.0"
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
+
+nanoid@3.3.6:
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.6.tgz#443380c856d6e9f9824267d960b4236ad583ea4c"
+  integrity sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==
 
 nanoid@^3.3.6, nanoid@^3.3.7:
   version "3.3.7"
@@ -2586,10 +2845,22 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
+solid-swr-store@0.10.7:
+  version "0.10.7"
+  resolved "https://registry.yarnpkg.com/solid-swr-store/-/solid-swr-store-0.10.7.tgz#9511308f01250a1509efbfaad5b481be7517e436"
+  integrity sha512-A6d68aJmRP471aWqKKPE2tpgOiR5fH4qXQNfKIec+Vap+MGQm3tvXlT8n0I8UgJSlNAsSAUuw2VTviH2h3Vv5g==
+
 source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
+
+sswr@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/sswr/-/sswr-2.0.0.tgz#db5e1f7c44addb8316de8e7efe23b7ea2cba090d"
+  integrity sha512-mV0kkeBHcjcb0M5NqKtKVg/uTIYNlIIniyDfSGrSfxpEdM9C365jK0z55pl9K0xAkNTJi2OAOVFQpgMPUk+V0w==
+  dependencies:
+    swrev "^4.0.0"
 
 streamsearch@^1.1.0:
   version "1.1.0"
@@ -2712,6 +2983,30 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+swr-store@0.10.6:
+  version "0.10.6"
+  resolved "https://registry.yarnpkg.com/swr-store/-/swr-store-0.10.6.tgz#1856bda886e87dbed40c8c9874c1b1624d2e502d"
+  integrity sha512-xPjB1hARSiRaNNlUQvWSVrG5SirCjk2TmaUyzzvk69SZQan9hCJqw/5rG9iL7xElHU784GxRPISClq4488/XVw==
+  dependencies:
+    dequal "^2.0.3"
+
+swr@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-2.2.0.tgz#575c6ac1bec087847f4c86a39ccbc0043c834d6a"
+  integrity sha512-AjqHOv2lAhkuUdIiBu9xbuettzAzWXmCEcLONNKJRba87WAefz8Ca9d6ds/SzrPc235n1IxWYdhJ2zF3MNUaoQ==
+  dependencies:
+    use-sync-external-store "^1.2.0"
+
+swrev@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/swrev/-/swrev-4.0.0.tgz#83da6983c7ef9d71ac984a9b169fc197cbf18ff8"
+  integrity sha512-LqVcOHSB4cPGgitD1riJ1Hh4vdmITOp+BkmfmXRh4hSF/t7EnS4iD+SOTmq7w5pPm/SiPeto4ADbKS6dHUDWFA==
+
+swrv@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/swrv/-/swrv-1.0.4.tgz#278b4811ed4acbb1ae46654972a482fd1847e480"
+  integrity sha512-zjEkcP8Ywmj+xOJW3lIT65ciY/4AL4e/Or7Gj0MzU3zBJNMdJiT8geVZhINavnlHRMMCcJLHhraLTAiDOTmQ9g==
 
 tailwind-merge@^2.2.1:
   version "2.2.1"
@@ -2900,6 +3195,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+use-sync-external-store@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+
 util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -3022,3 +3322,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod-to-json-schema@^3.22.4:
+  version "3.22.4"
+  resolved "https://registry.yarnpkg.com/zod-to-json-schema/-/zod-to-json-schema-3.22.4.tgz#f8cc691f6043e9084375e85fb1f76ebafe253d70"
+  integrity sha512-2Ed5dJ+n/O3cU383xSY28cuVi0BCQhF8nYqWU5paEpl7fVdqdAmiLdqLyfblbNdfOFwFfi/mqU4O1pwc60iBhQ==

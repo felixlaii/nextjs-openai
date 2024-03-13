@@ -3,6 +3,7 @@ import { SendHorizontalIcon } from "lucide-react";
 
 import { Button } from "./button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Copy from "./copy";
 
 export interface MessageProps {
   role: string;
@@ -21,10 +22,7 @@ export const Message: React.FC<MessageProps> = ({ role, content }) => {
   );
 };
 
-const ChatBox: React.FC<ChatBoxProps> = ({
-  conversationHistory,
-  onSendMessage,
-}) => {
+const ChatBox: React.FC<ChatBoxProps> = () => {
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -97,6 +95,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                     <p className="font-semibold text-zinc-600 text-sm">
                       AI ChatBot
                     </p>
+                    <Copy message={m} className="mt-1" />
                   </div>
                   <div className="mt-2 text-sm text-zinc-500">{m.content}</div>
                 </div>
