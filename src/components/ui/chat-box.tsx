@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { SendHorizontalIcon } from "lucide-react";
+
 import { Button } from "./button";
 interface AvatarProps {
   children?: React.ReactNode;
@@ -81,7 +83,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           name="message"
           value={input}
           onChange={handleInputChange}
-          placeholder="Type your message..."
+          placeholder="ask me anything..."
           className="w-full pr-12 placeholder:italic placeholder:text-zinc-600/75 focus-visible:ring-zinc-500 border p-2 rounded-md"
         />
         {/* <button
@@ -98,11 +100,11 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           size="sm"
           variant="outline"
           className={`absolute right-1 top-1 h-8 w-20 ${
-            isLoading ? "bg-gray-400" : "bg-blue-500"
+            isLoading ? "bg-white" : "bg-gray-200"
           } text-white rounded-md`}
           disabled={isLoading}
         >
-          {isLoading ? "Sending..." : "Send"}
+          <SendHorizontalIcon className="h-5 w-5 text-zinc-500" />
         </Button>
       </form>
     </div>
