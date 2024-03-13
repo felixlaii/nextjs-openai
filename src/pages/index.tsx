@@ -41,10 +41,12 @@ const Home: React.FC = () => {
     }
   };
   return (
-    <div className="flex flex-column">
+    <div className="flex flex-column mt-10">
       <div className="w-full justify-center">
         <div>
-          <h1 className="text-center">ChatGPT Clone</h1>
+          <h1 className="text-center text-xl font-bold tracking-wider">
+            ChatGPT Clone
+          </h1>
         </div>
         {/* Render the ChatBox component with the current conversation history and the function to update it */}
         <ChatBox
