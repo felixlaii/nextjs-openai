@@ -98,6 +98,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                     <p className="font-semibold text-zinc-600 text-sm">
                       AI ChatBot
                     </p>
+                    <Copy message={m} className="mt-1" />
                   </div>
                   <div className="mt-2 text-sm text-zinc-500">{m.content}</div>
                 </div>

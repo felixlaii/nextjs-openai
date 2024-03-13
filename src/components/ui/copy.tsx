@@ -16,34 +16,32 @@ export default function Copy({
 }: ChatMessageActionsProps) {
   const { copyToClipboard, pasteFromClipboard, state } = useClipboard();
   const [textToCopy, setTextToCopy] = useState<any>();
-  const [pastedText, setPastedText] = useState<any>();
 
-  const handleCopy = async () => {
-    await copyToClipboard(textToCopy);
-  };
-
-  const handlePaste = async () => {
-    const text = await pasteFromClipboard();
-    setPastedText(text);
+  const handleCopy = () => {
+    if (state) return copyToClipboard(message.content);
   };
 
   return (
     <div className={cn("", className)} {...props}>
-      <Button onClick={handleCopy}>
+      <Button
+        variant="secondary"
+        size="icon"
+        className="h-8 w-8"
+        onClick={handleCopy}
+      >
         {textToCopy ? (
           <CheckIcon className="h-4 w-4 text-emerald-500" />
         ) : (
           <CopyIcon className="h-4 w-4 text-zinc-500" />
         )}
-        <span className="sr-only">Copy message</span>
-        Copy to Clipboard
+        <span className="sr-only"></span>
       </Button>
-      <Button onClick={handlePaste}>Paste from Clipboard</Button>
+      {/* <Button onClick={handlePaste}></Button> */}
 
-      {state.success && <p>Operation successful!</p>}
+      {state.success && <p className="text-xs">copied!</p>}
       {state.error && <p>Error: {state.error}</p>}
 
-      <p>Pasted Text: {pastedText}</p>
+      {/* <p>Pasted Text: {pastedText}</p> */}
     </div>
   );
 }
