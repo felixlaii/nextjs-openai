@@ -14,7 +14,7 @@ export default function Copy({
   className,
   ...props
 }: ChatMessageActionsProps) {
-  const { copyToClipboard, pasteFromClipboard, state } = useClipboard();
+  const { copyToClipboard, state } = useClipboard();
   const [textToCopy, setTextToCopy] = useState<any>();
 
   const handleCopy = () => {
@@ -36,12 +36,9 @@ export default function Copy({
         )}
         <span className="sr-only"></span>
       </Button>
-      {/* <Button onClick={handlePaste}></Button> */}
 
       {state.success && <p className="text-xs">copied!</p>}
       {state.error && <p>Error: {state.error}</p>}
-
-      {/* <p>Pasted Text: {pastedText}</p> */}
     </div>
   );
 }
