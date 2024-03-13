@@ -76,7 +76,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                   <AvatarFallback className="text-sm">U</AvatarFallback>
                 </Avatar>
                 <div className="mt-1.5">
-                  <p className="font-semibold text-sm">You</p>
+                  <p className="font-semibold text-sm text-zinc-600">You</p>
                   <div className="mt-1.5 text-sm text-zinc-500">
                     {m.content}
                   </div>
@@ -94,7 +94,9 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                 </Avatar>
                 <div className="mt-1.5 w-full">
                   <div className="flex justify-between">
-                    <p className="font-semibold text-sm">AI ChatBot</p>
+                    <p className="font-semibold text-zinc-600 text-sm">
+                      AI ChatBot
+                    </p>
                   </div>
                   <div className="mt-2 text-sm text-zinc-500">{m.content}</div>
                 </div>
@@ -111,12 +113,12 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           value={input}
           onChange={handleInputChange}
           placeholder="ask me anything..."
-          className="w-full pr-12 placeholder:italic placeholder:text-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md"
+          className="w-full pr-12 pl-4 placeholder:italic placeholder:text-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md"
         />
         <Button
           size="sm"
           variant="outline"
-          className={`absolute right-1 top-1 h-8 w-20 ${
+          className={`absolute right-1 top-1 h-8 w-16 ${
             isLoading ? "bg-white" : "bg-gray-200"
           } text-white rounded-md`}
           disabled={isLoading}
