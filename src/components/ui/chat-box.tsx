@@ -3,7 +3,7 @@ import React, { useState } from "react";
 interface AvatarProps {
   children?: React.ReactNode;
 }
-const Avatar: React.FC<AvatarProps> = ({ children }) => {
+export const Avatar: React.FC<AvatarProps> = ({ children }) => {
   return <div className="avatar">{children}</div>;
 };
 
@@ -19,7 +19,7 @@ interface ChatBoxProps {
 export const Message: React.FC<MessageProps> = ({ role, content }) => {
   return (
     <div className={`message ${role === "user" ? "user" : "assistant"}`}>
-      {role === "user" ? "You" : "Bot"}: {content}
+      {role === "user" ? "You" : "ChatBox"}: {content}
     </div>
   );
 };
