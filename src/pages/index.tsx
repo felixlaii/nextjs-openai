@@ -1,10 +1,7 @@
-// pages/index.tsx
-
 import React, { useState } from "react";
 import ChatBox from "../components/ui/chat-box";
 import { Message, MessageProps } from "../components/ui/chat-box";
 const Home: React.FC = () => {
-  // State to manage the conversation history
   const [conversationHistory, setConversationHistory] = useState<
     MessageProps[]
   >([]);
