@@ -26,4 +26,24 @@ export default function Copy({
     const text = await pasteFromClipboard();
     setPastedText(text);
   };
+
+  return (
+    <div className={cn("", className)} {...props}>
+      <Button onClick={handleCopy}>
+        {textToCopy ? (
+          <CheckIcon className="h-4 w-4 text-emerald-500" />
+        ) : (
+          <CopyIcon className="h-4 w-4 text-zinc-500" />
+        )}
+        <span className="sr-only">Copy message</span>
+        Copy to Clipboard
+      </Button>
+      <Button onClick={handlePaste}>Paste from Clipboard</Button>
+
+      {state.success && <p>Operation successful!</p>}
+      {state.error && <p>Error: {state.error}</p>}
+
+      <p>Pasted Text: {pastedText}</p>
+    </div>
+  );
 }
