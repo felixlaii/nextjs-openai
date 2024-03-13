@@ -76,7 +76,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                   <AvatarFallback className="text-sm">U</AvatarFallback>
                 </Avatar>
                 <div className="mt-1.5">
-                  <p className="font-semibold">You</p>
+                  <p className="font-semibold text-sm">You</p>
                   <div className="mt-1.5 text-sm text-zinc-500">
                     {m.content}
                   </div>
@@ -94,7 +94,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                 </Avatar>
                 <div className="mt-1.5 w-full">
                   <div className="flex justify-between">
-                    <p className="font-semibold">Bot</p>
+                    <p className="font-semibold text-sm">AI ChatBot</p>
                   </div>
                   <div className="mt-2 text-sm text-zinc-500">{m.content}</div>
                 </div>
