@@ -75,7 +75,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
                 </Avatar>
                 <div className="mt-1.5">
                   <p className="font-semibold text-sm text-zinc-600">You</p>
-                  <div className="mt-1.5 text-sm text-zinc-500">
+                  <div className="mt-1.5 text-xs text-zinc-500">
                     {m.content}
                   </div>
                 </div>
@@ -86,7 +86,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
               <div className="mb-6 flex gap-3">
                 <Avatar>
                   <AvatarImage src="" />
-                  <AvatarFallback className="bg-emerald-500 text-white">
+                  <AvatarFallback className="bg-gray-700 text-white">
                     AI
                   </AvatarFallback>
                 </Avatar>
@@ -95,9 +95,9 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
                     <p className="font-semibold text-zinc-600 text-sm">
                       AI ChatBot
                     </p>
-                    <Copy message={m} className="mt-1" />
+                    <Copy message={m} />
                   </div>
-                  <div className="mt-2 text-sm text-zinc-500">{m.content}</div>
+                  <div className=" text-xs text-zinc-500">{m.content}</div>
                 </div>
               </div>
             )}
