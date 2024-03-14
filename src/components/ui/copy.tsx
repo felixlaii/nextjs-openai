@@ -13,8 +13,7 @@ export default function Copy({
   className,
   ...props
 }: ChatMessageActionsProps) {
-  const { copyToClipboard, state } = useClipboard();
-  const [textToCopy, setTextToCopy] = useState<any>();
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
     if (state) return copyToClipboard(message.content);
