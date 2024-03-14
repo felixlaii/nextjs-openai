@@ -56,8 +56,12 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             {m.role === "user" && (
               <div className="mb-6 flex gap-3">
                 <Avatar>
-                  <AvatarImage src="" />
-                  <AvatarFallback className="text-sm">U</AvatarFallback>
+                  <AvatarImage />
+
+                  {/* Simulate failed image load */}
+                  <AvatarFallback className="bg-gray-700 text-sm text-white">
+                    U
+                  </AvatarFallback>
                 </Avatar>
                 <div className="mt-1.5">
                   <p className="font-semibold text-sm text-zinc-600">You</p>
@@ -71,8 +75,10 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             {m.role === "assistant" && (
               <div className="mb-6 flex gap-3">
                 <Avatar>
-                  <AvatarImage src="" />
-                  <AvatarFallback className="bg-gray-700 text-white">
+                  <AvatarImage className="" />
+
+                  {/* Example values for width and height */}
+                  <AvatarFallback className="bg-zinc-300 text-white text-sm">
                     AI
                   </AvatarFallback>
                 </Avatar>
@@ -101,6 +107,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           className="w-full pr-12 pl-4 placeholder:italic placeholder:text-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md"
         />
         <Button
+          type="submit"
           size="sm"
           variant="outline"
           className={`absolute right-1 top-1 h-8 w-16 ${
