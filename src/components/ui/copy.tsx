@@ -29,19 +29,19 @@ export default function Copy({
       <Button
         variant="secondary"
         size="icon"
-        className="h-7 w-7"
+        className="h-8 w-8"
         onClick={handleCopy}
+        disabled={copied}
       >
-        {textToCopy ? (
+        {copied ? (
           <CheckIcon className="h-4 w-4 text-emerald-500" />
         ) : (
-          <CopyIcon className="h-3.5 w-3.5 text-zinc-500" />
+          <CopyIcon className="h-4 w-4 text-zinc-500" />
         )}
-        <span className="sr-only"></span>
+        <span className="sr-only">Copy message</span>
       </Button>
 
-      {state.success && <p className="text-xs">copied!</p>}
-      {state.error && <p>Error: {state.error}</p>}
+      {copied && <p className="text-xs">Copied!</p>}
     </div>
   );
 }
