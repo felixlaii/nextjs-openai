@@ -26,13 +26,13 @@ export default function Copy({
       <Button
         variant="secondary"
         size="icon"
-        className="h-8 w-8"
+        className="h-7 w-7"
         onClick={handleCopy}
       >
         {textToCopy ? (
           <CheckIcon className="h-4 w-4 text-emerald-500" />
         ) : (
-          <CopyIcon className="h-4 w-4 text-zinc-500" />
+          <CopyIcon className="h-3.5 w-3.5 text-zinc-500" />
         )}
         <span className="sr-only"></span>
       </Button>
