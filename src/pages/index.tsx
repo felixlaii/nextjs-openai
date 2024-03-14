@@ -44,7 +44,7 @@ const Home: React.FC = () => {
     <div className="flex flex-column mt-14">
       <div className="w-full justify-center">
         <div>
-          <h1 className="text-center text-xl font-bold tracking-wider mt-6">
+          <h1 className="text-center text-xl text-gray-600 font-bold tracking-widest mt-6">
             ChatGPT Clone
           </h1>
         </div>
