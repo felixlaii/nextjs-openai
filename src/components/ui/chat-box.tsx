@@ -17,13 +17,15 @@ interface ChatBoxProps {
 export const Message: React.FC<MessageProps> = ({ role, content }) => {
   return (
     <div className={`message ${role === "user" ? "user" : "assistant"}`}>
-      {role === "user" ? "You" : "ChatBox"}: {content}
+      {role === "user" ? "You" : "ChatBot"}: {content}
     </div>
   );
 };
 
-const ChatBox: React.FC<ChatBoxProps> = () => {
-  const [messages, setMessages] = useState<any[]>([]);
+const ChatBox: React.FC<ChatBoxProps> = ({
+  conversationHistory,
+  onSendMessage,
+}) => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,30 +35,14 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setMessages([...messages, { role: "user", content: input }]);
-    setInput("");
+    if (!input.trim()) return; // Prevent sending empty messages
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/hello", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: input }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { role: "assistant", content: data.assistantReply },
-        ]);
-      } else {
-        console.error("Error calling API:", response.statusText);
-      }
+      await onSendMessage(input);
+      setInput(""); // Clear input field after sending message
     } catch (error) {
-      console.error("Error calling API:", error);
+      console.error("Error sending message:", error);
     }
 
     setIsLoading(false);
@@ -65,7 +51,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
   return (
     <div className="mx-auto mt-3 w-full max-w-lg">
       <div className="mb-2 h-[400px] rounded-md border p-4 overflow-y-auto">
-        {messages.map((m, index) => (
+        {conversationHistory.map((m, index) => (
           <div key={index} className="mr-6 whitespace-pre-wrap md:mr-12">
             {m.role === "user" && (
               <div className="mb-6 flex gap-3">
@@ -95,7 +81,7 @@ const ChatBox: React.FC<ChatBoxProps> = () => {
                     <p className="font-semibold text-zinc-600 text-sm">
                       AI ChatBot
                     </p>
-                    <Copy message={m} />
+                    <Copy content={m.content} />
                   </div>
                   <div className=" text-xs text-zinc-500">{m.content}</div>
                 </div>

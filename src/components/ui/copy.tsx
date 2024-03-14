@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { CheckIcon, CopyIcon } from "lucide-react";
-// import { useClipboard } from "@custom-react-hooks/all";
 
 interface ChatMessageActionsProps extends React.ComponentProps<"div"> {
   content: string;
@@ -25,7 +24,7 @@ export default function Copy({
   };
 
   return (
-    <div className={cn("", className)} {...props}>
+    <div className={cn("flex flex-row items-center", className)} {...props}>
       <Button
         variant="secondary"
         size="icon"
