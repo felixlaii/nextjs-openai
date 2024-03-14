@@ -15,8 +15,13 @@ export default function Copy({
 }: ChatMessageActionsProps) {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    if (state) return copyToClipboard(message.content);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(content);
+      setCopied(true);
+    } catch (error) {
+      console.error("Error copying text:", error);
+    }
   };
 
   return (
