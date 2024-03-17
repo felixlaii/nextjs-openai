@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { CheckIcon, CopyIcon } from "lucide-react";
 
+// Defining Props
 interface ChatMessageActionsProps extends React.ComponentProps<"div"> {
   content: string;
 }
@@ -12,14 +13,16 @@ export default function Copy({
   className,
   ...props
 }: ChatMessageActionsProps) {
+  // State to track whether the content has been copied
   const [copied, setCopied] = useState(false);
 
+  // Function to handle copying the content
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(content);
-      setCopied(true);
+      await navigator.clipboard.writeText(content); // Copy content
+      setCopied(true); // Set copied state to true on successful copying
     } catch (error) {
-      console.error("Error copying text:", error);
+      console.error("Error copying text:", error); // Log error if copying fails
     }
   };
 
