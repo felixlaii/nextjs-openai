@@ -37,6 +37,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     setInput(e.target.value);
   };
 
+  // Handler for form submission
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input.trim()) return; // Prevent sending empty messages
