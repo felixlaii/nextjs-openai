@@ -47,7 +47,6 @@ const Home: React.FC = () => {
             ChatGPT Clone
           </h1>
         </div>
-        {/* Render the ChatBox component with the current conversation history and the function to update it */}
         <ChatBox
           conversationHistory={conversationHistory}
           onSendMessage={handleSendMessage}
