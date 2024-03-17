@@ -42,7 +42,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   }, [conversationHistory]);
 
   // Handler for input change
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
   };
 
@@ -111,19 +111,21 @@ const ChatBox: React.FC<ChatBoxProps> = ({
       </div>
 
       <form onSubmit={onSubmit} className="relative">
-        <input
-          type="text"
+        <textarea
           name="message"
           value={input}
           onChange={handleInputChange}
           placeholder="ask me anything..."
-          className="w-full pr-12 pl-4 placeholder:italic placeholder:text-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md"
+          className="w-96 min-h-10 max-h-32 px-4 py-2 placeholder-italic placeholder-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md resize-none overflow-y-auto"
+          style={{
+            height: `${Math.min(8 * Math.ceil(input.length / 40), 32)}rem`,
+          }}
         />
         <Button
           type="submit"
           size="sm"
           variant="outline"
-          className={`absolute right-1 top-1 h-8 w-16 ${
+          className={`absolute right-1 top-0.5 h-9 w-12 ${
             isLoading ? "bg-white" : "bg-gray-200"
           } text-white rounded-md`}
           disabled={isLoading}
