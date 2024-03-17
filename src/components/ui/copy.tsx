@@ -13,6 +13,7 @@ export default function Copy({
   className,
   ...props
 }: ChatMessageActionsProps) {
+  // State to track whether the content has been copied
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
