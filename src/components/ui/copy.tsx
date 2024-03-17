@@ -20,7 +20,7 @@ export default function Copy({
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(content); // Copy content
-      setCopied(true);
+      setCopied(true); // Set copied state to true on successful copying
     } catch (error) {
       console.error("Error copying text:", error);
     }
