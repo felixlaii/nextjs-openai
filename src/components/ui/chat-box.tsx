@@ -28,6 +28,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   conversationHistory,
   onSendMessage,
 }) => {
+  // State for the input message and loading indicators
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
