@@ -32,6 +32,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     // Scroll to the bottom of the container
@@ -40,6 +41,13 @@ const ChatBox: React.FC<ChatBoxProps> = ({
         chatContainerRef.current.scrollHeight;
     }
   }, [conversationHistory]);
+  useEffect(() => {
+    if (textAreaRef.current) {
+      textAreaRef.current.style.height = "auto";
+      textAreaRef.current.style.height =
+        textAreaRef.current.scrollHeight + "px";
+    }
+  }, [input]);
 
   // Handler for input change
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -123,11 +131,10 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               onSubmit(); // Call the onSubmit function to send the message
             }
           }}
+          ref={textAreaRef}
+          rows={1}
           placeholder="Ask me anything..."
-          className="w-96 resize-y h-10 max-h-32 px-4 py-2 placeholder-italic placeholder-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md resize-none overflow-y-auto custom-placeholder"
-          // style={{
-          //   height: `${Math.min(8 * Math.ceil(input.length / 40), 32)}rem`,
-          // }}
+          className="w-96 h-[1rem] max-h-32 px-4 py-2 placeholder-italic placeholder-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md resize-none custom-placeholder"
         />
 
         <Button
