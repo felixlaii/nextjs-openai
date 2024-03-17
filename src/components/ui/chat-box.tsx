@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { SendHorizontalIcon } from "lucide-react";
 
 import { Button } from "./button";
@@ -31,6 +31,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   // State for the input message and loading indicators
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   // Handler for input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
