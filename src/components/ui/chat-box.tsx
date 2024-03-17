@@ -47,8 +47,10 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   };
 
   // Handler for form submission
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit = async (e?: React.FormEvent<HTMLFormElement>) => {
+    if (e) {
+      e.preventDefault();
+    }
     if (!input.trim()) return; // Prevent sending empty messages
     setIsLoading(true);
 
@@ -115,12 +117,19 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           name="message"
           value={input}
           onChange={handleInputChange}
-          placeholder="ask me anything..."
-          className="w-96 min-h-10 max-h-32 px-4 py-2 placeholder-italic placeholder-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md resize-none overflow-y-auto"
-          style={{
-            height: `${Math.min(8 * Math.ceil(input.length / 40), 32)}rem`,
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault(); // Prevent default behavior of Enter key
+              onSubmit(); // Call the onSubmit function to send the message
+            }
           }}
+          placeholder="Ask me anything..."
+          className="w-96 resize-y h-10 max-h-32 px-4 py-2 placeholder-italic placeholder-zinc-500/65 focus-visible:ring-zinc-200 focus:outline-none focus-visible:ring-1 border p-2 rounded-md resize-none overflow-y-auto custom-placeholder"
+          // style={{
+          //   height: `${Math.min(8 * Math.ceil(input.length / 40), 32)}rem`,
+          // }}
         />
+
         <Button
           type="submit"
           size="sm"
