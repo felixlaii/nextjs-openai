@@ -15,6 +15,7 @@ interface ChatBoxProps {
   onSendMessage: (message: string) => Promise<void>;
 }
 
+// Component to display individual messages
 export const Message: React.FC<MessageProps> = ({ role, content }) => {
   return (
     <div className={`message ${role === "user" ? "user" : "assistant"}`}>
