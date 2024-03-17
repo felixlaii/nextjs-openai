@@ -16,7 +16,7 @@ const Avatar = React.forwardRef<
     {...props} // Forwarding other props
   />
 ));
-Avatar.displayName = AvatarPrimitive.Root.displayName;
+Avatar.displayName = AvatarPrimitive.Root.displayName; // Setting displayName for debugging purposes
 
 const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
