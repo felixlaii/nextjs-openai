@@ -16,6 +16,7 @@ export default function Copy({
   // State to track whether the content has been copied
   const [copied, setCopied] = useState(false);
 
+  // Function to handle copying the content
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(content);
