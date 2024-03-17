@@ -32,6 +32,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  // Form submission handler
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
