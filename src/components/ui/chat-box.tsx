@@ -5,6 +5,7 @@ import { Button } from "./button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Copy from "./copy";
 
+// Define the shape of message props
 export interface MessageProps {
   role: string;
   content: string;
