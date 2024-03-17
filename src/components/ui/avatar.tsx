@@ -13,7 +13,7 @@ const Avatar = React.forwardRef<
       "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", // Concatenating classNames with utility function
       className
     )}
-    {...props}
+    {...props} // Forwarding other props
   />
 ));
 Avatar.displayName = AvatarPrimitive.Root.displayName;
