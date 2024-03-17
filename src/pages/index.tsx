@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         },
         body: JSON.stringify({
           text: message,
-          conversationHistory: conversationHistory,
+          conversationHistory: conversationHistory, // use current state here
         }),
       });
 
