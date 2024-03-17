@@ -62,8 +62,6 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               <div className="mb-6 flex gap-3">
                 <Avatar>
                   <AvatarImage />
-
-                  {/* Simulate failed image load */}
                   <AvatarFallback className="bg-gray-700 text-sm text-white">
                     U
                   </AvatarFallback>
@@ -81,8 +79,6 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               <div className="mb-6 flex gap-3">
                 <Avatar>
                   <AvatarImage className="" />
-
-                  {/* Example values for width and height */}
                   <AvatarFallback className="bg-zinc-300 text-white text-sm">
                     AI
                   </AvatarFallback>
