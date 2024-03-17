@@ -64,7 +64,10 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
   return (
     <div className="mx-auto mt-3 w-full max-w-lg">
-      <div className="mb-2 h-[400px] rounded-md border p-4 overflow-y-auto">
+      <div
+        ref={chatContainerRef}
+        className="mb-2 h-[400px] rounded-md border p-4 overflow-y-auto"
+      >
         {conversationHistory.map((m, index) => (
           <div key={index} className="mr-6 whitespace-pre-wrap md:mr-12">
             {m.role === "user" && (
