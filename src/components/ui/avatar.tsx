@@ -1,5 +1,5 @@
-import React from "react";
-import AvatarPrimitive from "@radix-ui/react-avatar";
+import * as React from "react";
+import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 import { cn } from "@/lib/utils";
 
@@ -16,7 +16,7 @@ const Avatar = React.forwardRef<
     {...props} // Forwarding other props
   />
 ));
-Avatar.displayName = AvatarPrimitive.Root.displayName; // Setting displayName for debugging purposes
+Avatar.displayName = AvatarPrimitive.Root.displayName;
 
 const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
