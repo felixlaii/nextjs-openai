@@ -31,6 +31,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   // State for the input message and loading indicators
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  // useRef for chat container and text area
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
