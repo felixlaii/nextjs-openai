@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { CheckIcon, CopyIcon } from "lucide-react";
 
+// Defining Props
 interface ChatMessageActionsProps extends React.ComponentProps<"div"> {
   content: string;
 }
