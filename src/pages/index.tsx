@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import ChatBox from "../components/ui/chat-box";
 import { MessageProps } from "../components/ui/chat-box";
+
 const Home: React.FC = () => {
   const [conversationHistory, setConversationHistory] = useState<
     MessageProps[]
   >([]);
 
+  // Handler for sending messages, and conversation history while calling OpenAI API
   const handleSendMessage = async (message: string) => {
     setConversationHistory([
       ...conversationHistory,
