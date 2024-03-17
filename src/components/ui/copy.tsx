@@ -22,7 +22,7 @@ export default function Copy({
       await navigator.clipboard.writeText(content); // Copy content
       setCopied(true); // Set copied state to true on successful copying
     } catch (error) {
-      console.error("Error copying text:", error);
+      console.error("Error copying text:", error); // Log error if copying fails
     }
   };
 
