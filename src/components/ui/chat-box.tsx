@@ -41,6 +41,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({
         chatContainerRef.current.scrollHeight;
     }
   }, [conversationHistory]);
+
+  // Expanding text area as user types
   useEffect(() => {
     if (textAreaRef.current) {
       textAreaRef.current.style.height = "auto";
