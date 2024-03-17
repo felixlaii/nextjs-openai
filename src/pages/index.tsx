@@ -30,7 +30,7 @@ const Home: React.FC = () => {
         const data = await response.json();
         setConversationHistory((prevConversationHistory) => [
           ...prevConversationHistory,
-          { role: "assistant", content: data.assistantMessage },
+          { role: "assistant", content: data.assistantMessage }, // Update user message here
         ]);
       } else {
         console.error("Error calling API:", response.statusText);
